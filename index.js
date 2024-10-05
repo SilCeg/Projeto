@@ -8,9 +8,7 @@ const rotas = {
     '/level2': "Teste de rota 2"
 }
 
-const anus = http
-
-anus.createServer ((req,res)=>{
+const anus = http.createServer ((req,res)=>{
     res.writeHead(200, {'content-type': 'text/plain'})
     res.end (rotas[req.url])
 })
