@@ -22,10 +22,12 @@ app.get("/teste", function (req, res) {
 });
 
 app.get("/login/:email/:senha", function (req, res) {
-    res.send(req.params
-        
-    );
-  });
+    res.send(req.params );})
+
+app.get("/htmlTeste", function (req, res) {
+    res.sendFile(__dirname + "/html/index.html");
+    });
+
 
 
 //SEMPRE MANTENHA NO FINAL DO CÒDIGO JJ
