@@ -1,18 +1,34 @@
-import http from 'http'
+/*var rola = require("http");
 
-const PORT = 7777; 
+rola.createServer(function (req, res) {
+    res.end("Hello World");
+  }).listen(3300);
 
-const rotas = {
-    '/': "Rota principal",
-    '/level1': "Teste de rota 1",
-    '/level2': "Teste de rota 2"
-}
+console.log("Server is running on port 3300");*/
 
-const anus = http.createServer ((req,res)=>{
-    res.writeHead(200, {'content-type': 'text/plain'})
-    res.end (rotas[req.url])
-})
+//Criando uma variável com os poderes de Express que é um gerenciador de rotas
+const express = require("express");
 
-anus.listen(PORT, () => {
-    console.log('Deu certo!')
-})
+//Clonando a varável com poderes de express para manipular
+const app = express();
+
+//ROTAS:
+app.get("/", function (req, res) {
+  res.send("Hello World");
+});
+
+app.get("/teste", function (req, res) {
+  res.send("Hello Teste");
+});
+
+app.get("/login/:email/:senha", function (req, res) {
+    res.send(req.params
+        
+    );
+  });
+
+
+//SEMPRE MANTENHA NO FINAL DO CÒDIGO JJ
+app.listen(3031, function () {
+  console.log("Server is running on port 3031");
+});
