@@ -1,6 +1,12 @@
 const express = require("express");
 const rotas = express();
 const Sequelize = require ("sequelize");
+const cors = require ("cors")
+
+rotas.use(cors())
+rotas.use(express.json())
+
+
 
 const conexaoBanco = new Sequelize("projeto", "root", "", {
     host: "localhost",
